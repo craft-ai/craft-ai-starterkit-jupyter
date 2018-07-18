@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+craft-ai = "*"
+jupyter = "*"
+pandas = "*"
+plotly = "*"
+matplotlib = "*"
+sklearn="*"
+scipy="*"
+
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+notebook = "jupyter notebook src/"

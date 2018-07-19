@@ -8,6 +8,7 @@ verify_ssl = true
 craft-ai = "*"
 jupyter = "*"
 pandas = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.7"

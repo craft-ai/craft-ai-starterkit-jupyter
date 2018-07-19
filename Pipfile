@@ -8,10 +8,6 @@ verify_ssl = true
 craft-ai = "*"
 jupyter = "*"
 pandas = "*"
-matplotlib = "*"
-numpy = "*"
-plotly = "*"
-multiprocessing = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,6 +1,6 @@
 # **craft ai** Jupyter Notebook starter kit #
 
-[![License](https://img.shields.io/badge/license-BSD--3--Clause-42358A.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/craft-ai/craft-ai-starterkit-jupyter/master.svg?style=flat-square)](https://travis-ci.org/craft-ai/craft-ai-starterkit-jupyter) [![License](https://img.shields.io/badge/license-BSD--3--Clause-42358A.svg?style=flat-square)](LICENSE)
 
 [**craft ai** cognitive automation API](http://craft.ai) leverages explainable Artificial Intelligence to 10x your knowledge workers productivity. craft ai is the first high level AI API enabling Automated Machine Learning at the individual level that generates explainable predictive models on the fly.
 

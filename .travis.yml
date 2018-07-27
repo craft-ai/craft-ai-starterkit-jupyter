@@ -1,0 +1,14 @@
+language: python
+python: '3.6'
+install:
+- pip install pipenv
+- pipenv install
+script:
+- pipenv run main
+- pipenv run benchmark
+notifications:
+  slack: craft-ai:ZNnQErHJhw40oKmphy3fNGza
+  email:
+  - ops@craft.ai
+env:
+  secure: L1+iMDadrYfj4bUYpXBm1pM0XtKnNNxMsOROWSOqhsdF36w50mEF+JdWJgcxPAks8VPns+dvY3g5ZCUI1AG+Tgrfsi+OZcsHJU5BJiRShwQHyKf312sWQPdYAr9RMj9zeKAG5ng11ImT5kO/HWHW7lNy1xPXAfyQJowm1newVOIeG0zN17pIdR0jUSIEwSMeW/VbM/fouOCZAI0wrW8rYj42uxkgSCNs+jPUO8GXGgznAN5ScmF2n4HZ9pQ/l4sj3b2FfefoPaPjtVjseDjzeT0BzuX5we2N7RQoCECqmZ+j+nmnnhQEvVia2x5rZTV8ue1fDSm24RIfv/hhXtoh3qPmJ77fEchAM4PTKx4lw8FpHmPGqXTtWSqBmIaBeRtmbWmRHrfKdyOyf+s38HZiw3VWl1n8tzNw2TaRI/olKtyc6jlo/JEbmEgHaeyv0tXQrvG+SJjh/z0zBgNJeNxG7JD0tEoGcMYOX+vXlFuQ94yUBVUhKVX8MYYdbkucuGiYJhSyWvW9MaBEZjsqhKwnOSa3gxxeRqvgSabWxVB3TbbQ2hlk0LXF1QidJTEAIxbj8WPcuukJj+hkK1Pg6bt/jZZB+4gAEkB7K5yd1lv4vdweEQAROst7EM1SN0tHxhe7lHKlXsX/pZVrf4TN9QSRcKIzya1VYcdJVtPYg6Rrc+w=

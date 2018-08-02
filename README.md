@@ -14,10 +14,11 @@ The end goal: give an insight of the best New York city areas to find clients as
 - Install [Python v3.7](https://www.python.org/downloads/) on your computer, alternatively install any version of Python and install [pyenv](https://github.com/pyenv/pyenv#installation),
 - Install [pipenv](https://docs.pipenv.org/#install-pipenv-today) to properly manage dependencies,
 - Install the dependencies including **craft ai** python client, by running `pipenv install` in the cloned or downloaded repository, from a terminal.
+- Create a project following the subsection 1 of this [tutorial](https://beta.craft.ai/doc/python#1---retrieve-your-credentials) and copy the write token
 - in this directory, fill a `.env` file setting the following variable:
-    - `CRAFT_TOKEN` allows you to [authenticate your calls to the **craft ai** API](https://beta.craft.ai/doc/python#1---retrieve-your-credentials):
+    - `CRAFT_TOKEN` allows you to [authenticate your calls to the **craft ai** API](https://beta.craft.ai/doc/python#1---retrieve-your-credentials) :
     ```sh
-    CRAFT_TOKEN=my-token
+    CRAFT_TOKEN=paste-your-token-here
     ```
 
 ## Run ##

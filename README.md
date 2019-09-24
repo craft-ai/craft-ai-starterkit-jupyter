@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/craft-ai/craft-ai-starterkit-jupyter/master.svg?style=flat-square)](https://travis-ci.org/craft-ai/craft-ai-starterkit-jupyter) [![License](https://img.shields.io/badge/license-BSD--3--Clause-42358A.svg?style=flat-square)](LICENSE)
 
-[**craft ai** cognitive automation API](http://craft.ai) leverages explainable Artificial Intelligence to 10x your knowledge workers productivity. craft ai is the first high level AI API enabling Automated Machine Learning at the individual level that generates explainable predictive models on the fly.
+[**craft ai** API](http://craft.ai) leverages explainable Artificial Intelligence to 10x your knowledge workers productivity. craft ai is the first high level AI API enabling Automated Machine Learning at the individual level that generates explainable predictive models on the fly.
 
 This repository hosts a fully working notebook, in a **NYC taxi trip** context, integrating [**craft ai**](http://craft.ai) written with Jupyter using [**craft ai** official Python client](https://pypi.python.org/pypi?:action=display&name=craft-ai).
 

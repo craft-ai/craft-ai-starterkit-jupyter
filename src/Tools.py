@@ -9,19 +9,21 @@ FONT = {'family': 'sans-serif', 'weight': 'normal', 'size': 16}
 
 rmse_series = lambda s0, s1: np.sqrt(np.mean((np.array(s0)-np.array(s1))**2))
 
-def plot_zone_results(z, reality, craft, craft_std, sklearn, utc_test_index):    
+def plot_zone_results(z, index, reality, craft, craft_std, sklearn=pd.Series()):    
   FIGSIZE = (17, 5)
   fig, ax = plt.subplots(figsize=FIGSIZE)
 
-  plt.plot(utc_test_index, reality[z].values, label="Reality", )
+  plt.plot(index, reality[z].values, label="Reality", )
 
-  plt.plot(utc_test_index, sklearn[z].values, linestyle='dotted',
-           label='DT Sklearn - RMSE {:0.3}'.format(rmse_series(reality[z], sklearn[z])))
+  if not sklearn.empty:
+    plt.plot(index, sklearn[z].values, linestyle='dotted',
+             label='DT Sklearn - RMSE {:0.3}'\
+             .format(rmse_series(reality[z], sklearn[z])))
 
-  plt.plot(utc_test_index, craft[z].values, linestyle='-.',
+  plt.plot(index, craft[z].values, linestyle='-.',
            color="#42348B",
            label='craft - RMSE {:0.3}'.format(rmse_series(reality[z], craft[z])))
-  ax.fill_between(utc_test_index,
+  ax.fill_between(index,
                   (craft[z] + craft_std[z]).values,
                   (craft[z] - craft_std[z]).values,
                  color='#42348B', alpha=0.1,

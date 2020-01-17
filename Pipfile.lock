@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9ca64ac8259542fea1eb0875d8c9b7583a6cc16029402346ab7b18f719066eb5"
+            "sha256": "262e17d1e68b2552c64806d747720055417256be89d18b2f2cbd932332eb7470"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -369,13 +369,6 @@
             ],
             "version": "==0.7.5"
         },
-        "plotly": {
-            "hashes": [
-                "sha256:582ecdfd0e7db3a6f9e079c43f598280489b97d59f38b4c8f8400dc7eb3a3705",
-                "sha256:acc94f17452471ca3446c2ce491c4d1affb99b9ddd9eac4e05614ac4318f8780"
-            ],
-            "version": "==4.4.1"
-        },
         "prometheus-client": {
             "hashes": [
                 "sha256:71cd24a2b3eb335cb800c7159f423df1bd4dcd5171b234be15e3f31ec9f622da"
@@ -471,12 +464,6 @@
                 "sha256:ea881206e59f41dbd0bd445437d792e43906703fff75ca8ff43ccdb11f33f263"
             ],
             "version": "==2.20.1"
-        },
-        "retrying": {
-            "hashes": [
-                "sha256:08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b"
-            ],
-            "version": "==1.3.3"
         },
         "scikit-learn": {
             "hashes": [

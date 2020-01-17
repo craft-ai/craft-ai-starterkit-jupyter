@@ -2,60 +2,39 @@ import pandas as pd
 import numpy as np
 
 import matplotlib.pyplot as plt
-from plotly.offline import init_notebook_mode, iplot
-import plotly.graph_objs as go
+from pandas.plotting import register_matplotlib_converters
 
-init_notebook_mode(connected=True)
-
-
+register_matplotlib_converters()
 FONT = {'family': 'sans-serif', 'weight': 'normal', 'size': 16}
 
 rmse_series = lambda s0, s1: np.sqrt(np.mean((np.array(s0)-np.array(s1))**2))
 
-def plot_zone_results(zone, reality, craftai, craftai_std, sklearn, utc_test_index):    
-    real = go.Scatter(
-            x = utc_test_index,      
-            y = reality[zone].values,
-            name = 'Reality',
-            line=dict(color='hsla(0,0,0%)')
-        )
+def plot_zone_results(z, reality, craft, craft_std, sklearn, utc_test_index):    
+  FIGSIZE = (17, 5)
+  fig, ax = plt.subplots(figsize=FIGSIZE)
 
-    craft = go.Scatter(
-            x = utc_test_index,      
-            y = craftai[zone].values,
-            name = 'Prediction Craft - RMSE {}'.format(
-                int(rmse_series(reality[zone], craftai[zone])*10)/10),
-            line=dict(color='#85144B')
-        )
-    
-    craft_std = go.Scatter(
-            x = utc_test_index,      
-            y = craftai[zone].values,
-            name = 'Prediction Craft - STD',
-            mode='markers',
-            error_y=dict(
-                type='data',
-                array=craftai_std[zone],
-                visible=True,
-                color='#85144B'
-            ),
-            marker=dict(color='#85144B')
-        )
-    
-    dt_sklearn = go.Scatter(
-            x = utc_test_index,      
-            y = sklearn[zone].values,
-            name = 'Prediction Sklearn - RMSE {}'.format(
-                int(rmse_series(reality[zone], sklearn[zone])*10)/10)
-        )
+  plt.plot(utc_test_index, reality[z].values, label="Reality", )
 
-    layout = {'title': 'Zone {:0>3}'.format(zone),
-                      'xaxis': {'title':'Time'},
-                      'yaxis': {'title':'#Clients'},
-                      'font': dict(size=16)}
+  plt.plot(utc_test_index, sklearn[z].values, linestyle='dotted',
+           label='DT Sklearn - RMSE {:0.3}'.format(rmse_series(reality[z], sklearn[z])))
 
-    iplot({'data': [real, craft, craft_std, dt_sklearn],
-           'layout': layout})
+  plt.plot(utc_test_index, craft[z].values, linestyle='-.',
+           color="#42348B",
+           label='craft - RMSE {:0.3}'.format(rmse_series(reality[z], craft[z])))
+  ax.fill_between(utc_test_index,
+                  (craft[z] + craft_std[z]).values,
+                  (craft[z] - craft_std[z]).values,
+                 color='#42348B', alpha=0.1,
+                 label="Confidence")
+
+  plt.title(f'Predictions for zone {z}', y=1.25, fontdict=FONT, size=20)
+  ax.set_frame_on(False)
+  plt.grid(True)
+  plt.legend(prop={'size': FONT['size']}, 
+             bbox_to_anchor=(0., 1.02, 1., .102), 
+             loc='lower left', ncol=2, 
+             mode="expand", borderaxespad=0.)
+  plt.show()
 
 
 def plot_matshow(matrix, text, categories=None ):

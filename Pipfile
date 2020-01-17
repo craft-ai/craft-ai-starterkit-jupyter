@@ -6,17 +6,16 @@ verify_ssl = true
 
 [packages]
 craft-ai = "*"
-jupyter = "*"
 pandas = "*"
 plotly = "*"
 matplotlib = "*"
 sklearn="*"
-scipy="*"
+jupyterlab = "*"
 
 [requires]
 python_version = "3.7"
 
 [scripts]
-notebook = "jupyter notebook src/"
+notebook = "jupyter lab ./"
 main = "jupyter nbconvert --to notebook --execute ./src/Main.ipynb --inplace --ExecutePreprocessor.timeout=600"
 benchmark = "jupyter nbconvert --to notebook --execute ./src/Benchmark.ipynb --inplace --ExecutePreprocessor.timeout=600"

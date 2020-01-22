@@ -9,13 +9,13 @@ FONT = {'family': 'sans-serif', 'weight': 'normal', 'size': 16}
 
 rmse_series = lambda s0, s1: np.sqrt(np.mean((np.array(s0)-np.array(s1))**2))
 
-def plot_zone_results(z, index, reality, craft, craft_std, sklearn=pd.Series()):    
+def plot_zone_results(z, index, reality, craft, craft_std, sklearn=None):    
   FIGSIZE = (17, 5)
   fig, ax = plt.subplots(figsize=FIGSIZE)
 
   plt.plot(index, reality[z].values, label="Reality", )
 
-  if not sklearn.empty:
+  if sklearn is not None:
     plt.plot(index, sklearn[z].values, linestyle='dotted',
              label='DT Sklearn - RMSE {:0.3}'\
              .format(rmse_series(reality[z], sklearn[z])))

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a120c49a68c79430e55e9d6268aa1fd947b14711babaaa674a6133083e700010"
+            "sha256": "9369b481f57c324ed541edcce153e8d585ff74b21db3a172f63b2f138aaf37f2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -59,10 +59,10 @@
         },
         "craft-ai": {
             "hashes": [
-                "sha256:61c6abddd90f44fed8d0327661200603bf7db940c312793515bc9cfaed965006",
-                "sha256:88cb1e430ed41dc88fdddb45ef69c39dc8088e3db083e3fb21f3e0205478691e"
+                "sha256:dc14eb05cb439475f3151ed386c9f001a0df1c91c7a6f7ec0713faf7ff6449e3",
+                "sha256:ef9b235d32f7fb253a9834b8d08cdb051957b1deb5a42af974d0fbba323ad914"
             ],
-            "version": "==2.0.0rc1"
+            "version": "==2.0.0rc2"
         },
         "cycler": {
             "hashes": [

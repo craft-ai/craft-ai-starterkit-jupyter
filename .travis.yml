@@ -1,11 +1,10 @@
 language: python
-python: '3.7'
+python: '3.8.1'
 install:
 - pip install pipenv
 - pipenv install
 script:
-- pipenv run main
-- pipenv run benchmark
+- pipenv run jupyter notebook
 notifications:
   slack: craft-ai:ZNnQErHJhw40oKmphy3fNGza
   email:

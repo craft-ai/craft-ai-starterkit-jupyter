@@ -21,12 +21,10 @@ jobs:
           pip install pipenv
           pipenv install --deploy --dev
       - name: Run main
-        # env:
-        #   CRAFT_TOKEN: ${{ secrets.STANLEY_CRAFT_AI_TOKEN }}
+        env:
+          CRAFT_TOKEN: ${{ secrets.STANLEY_CRAFT_AI_TOKEN }}
         run: pipenv run main
       - name: Run Benchmark
-        # env:
-        #   CRAFT_TOKEN: ${{ secrets.STANLEY_CRAFT_AI_TOKEN }}
         run: pipenv run benchmark
       - name: Send message to Slack API
         uses: archive/github-actions-slack@v1.0.3

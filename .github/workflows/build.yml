@@ -1,0 +1,37 @@
+name: test starter-kit
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  run_tests:
+      # Preparing test/build environment 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout scm
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Install dependencies with pipenv
+        run: |
+          pip install pipenv
+          pipenv install --deploy --dev
+      - name: Run main
+        # env:
+        #   CRAFT_TOKEN: ${{ secrets.STANLEY_CRAFT_AI_TOKEN }}
+        run: pipenv run main
+      - name: Run Benchmark
+        # env:
+        #   CRAFT_TOKEN: ${{ secrets.STANLEY_CRAFT_AI_TOKEN }}
+        run: pipenv run benchmark
+      - name: Send message to Slack API
+        uses: archive/github-actions-slack@v1.0.3
+        id: notify
+        with:
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_BOT_TOKEN }}
+          slack-channel: ci
+          slack-text: Success! Github Actions for ${{ github.head_ref }} ("https://github.com/${{ github.repository }}/actions")
